@@ -1,0 +1,128 @@
+export const rankingData = {
+  funds: [
+    {
+      title: "신한BNPP 미국배당다우존스 증권상장지수투자신탁[주식-해외]",
+      amount: "1,247",
+      badges: [
+        { text: "낮은위험", color: "blue" },
+        { text: "해외주식", color: "red" },
+      ],
+    },
+    {
+      title: "신한BNPP 코스피200 증권상장지수투자신탁[주식]",
+      amount: "892",
+      badges: [
+        { text: "중간위험", color: "blue" },
+        { text: "국내주식", color: "red" },
+      ],
+    },
+    {
+      title: "신한BNPP 글로벌 테크놀로지 증권투자신탁[주식-재간접형]",
+      amount: "756",
+      badges: [
+        { text: "높은위험", color: "blue" },
+        { text: "해외주식", color: "red" },
+      ],
+    },
+    {
+      title: "신한BNPP 미국 나스닥100 증권상장지수투자신탁[주식-해외]",
+      amount: "634",
+      badges: [
+        { text: "중간위험", color: "blue" },
+        { text: "해외주식", color: "red" },
+      ],
+    },
+    {
+      title: "신한BNPP 한국형 TDF 2050 증권투자신탁[혼합]",
+      amount: "523",
+      badges: [
+        { text: "중간위험", color: "blue" },
+        { text: "혼합형", color: "red" },
+      ],
+    },
+  ],
+  els: [
+    {
+      title: "신한투자증권 제2024-123호 ELS (KOSPI200, 유로스톡스50 연계)",
+      amount: "2,156",
+      badges: [
+        { text: "원금보장", color: "blue" },
+        { text: "해외지수", color: "red" },
+      ],
+    },
+    {
+      title: "신한투자증권 제2024-124호 DLS (USD 금리 연계)",
+      amount: "1,834",
+      badges: [
+        { text: "중간위험", color: "blue" },
+        { text: "금리연계", color: "red" },
+      ],
+    },
+    {
+      title: "신한투자증권 제2024-125호 ELS (S&P500, 니케이225 연계)",
+      amount: "1,567",
+      badges: [
+        { text: "높은위험", color: "blue" },
+        { text: "해외지수", color: "red" },
+      ],
+    },
+    {
+      title: "신한투자증권 제2024-126호 ELS (KOSPI200 단일 연계)",
+      amount: "1,234",
+      badges: [
+        { text: "중간위험", color: "blue" },
+        { text: "국내지수", color: "red" },
+      ],
+    },
+    {
+      title: "신한투자증권 제2024-127호 DLS (원달러 환율 연계)",
+      amount: "987",
+      badges: [
+        { text: "높은위험", color: "blue" },
+        { text: "환율연계", color: "red" },
+      ],
+    },
+  ],
+  wrap: [
+    {
+      title: "신한 프리미엄 자문운용형 랩어카운트",
+      amount: "3,456",
+      badges: [
+        { text: "자문운용형", color: "purple" },
+        { text: "프리미엄", color: "blue" },
+      ],
+    },
+    {
+      title: "신한 글로벌 포트폴리오 랩어카운트",
+      amount: "2,789",
+      badges: [
+        { text: "투자일임형", color: "purple" },
+        { text: "글로벌", color: "blue" },
+      ],
+    },
+    {
+      title: "신한 ESG 테마 랩어카운트",
+      amount: "2,123",
+      badges: [
+        { text: "자문운용형", color: "purple" },
+        { text: "ESG", color: "blue" },
+      ],
+    },
+    {
+      title: "신한 스마트 베타 랩어카운트",
+      amount: "1,876",
+      badges: [
+        { text: "투자일임형", color: "purple" },
+        { text: "스마트베타", color: "blue" },
+      ],
+    },
+    {
+      title: "신한 안정형 자산배분 랩어카운트",
+      amount: "1,654",
+      badges: [
+        { text: "자문운용형", color: "purple" },
+        { text: "안정형", color: "blue" },
+      ],
+    },
+  ],
+}
