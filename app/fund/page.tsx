@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import "./styles.scss";
+import Footer from "@/components/Footer"
 
 export default function ShinhanFundPage() {
   return (
@@ -156,6 +157,7 @@ export default function ShinhanFundPage() {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
