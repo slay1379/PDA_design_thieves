@@ -101,7 +101,7 @@ export default function ShinhanFundPage() {
                   <button className="text-gray-400 font-bold text-base pb-2 border-b-4 border-transparent">수익률(3개월)</button>
                 </div>
                 {/* 수익률 값 */}
-                <div className="yield-value text-[3rem] font-bold text-[#e53935] flex items-baseline mb-2">
+                <div className="yield-value text-[3rem]  text-[#e53935] flex items-baseline mb-2">
                   0.25<span className="unit text-[2rem] font-bold ml-1">%</span>
                 </div>
                 {/* 차트 */}
