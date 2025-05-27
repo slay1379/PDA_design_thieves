@@ -14,127 +14,167 @@ export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px]">
       {/* Hero Background - 전체 화면 덮기 */}
-      <div 
+      <div
         className="absolute inset-0 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat"
         style={{ backgroundPosition: 'center top' }}
       >
-        <div className="absolute inset-0 bg-white/10"></div>
+        <div className="absolute inset-0 bg-black/15"></div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col justify-center">
-        {/* Main Content - 헤더와 겹침 */}
-        <div className="flex flex-col items-center text-white text-center pt-40 pb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">인기판매랭킹</h1>
-          <p className="text-lg lg:text-xl mb-12">신한투자증권 베스트 상품을 확인해보세요!</p>
+        {/* Main Content - 상단 여백 확보, 투명도 조정 */}
+        <div className="flex flex-col pt-40 text-center text-white/95 pb-16">
+          <h1 className="relative text-[36px] font-semibold leading-[36px] mb-[17px] text-center text-white z-10">인기판매랭킹</h1>
+          <p className="text-lg lg:text-xl mb-14">신한투자증권 베스트 상품을 확인해보세요!</p>
 
-          {/* Criteria Pills */}
-          <div className="flex space-x-2 mb-12">
-            {criteria.map((criterion) => (
-              <button
-                key={criterion}
-                onClick={() => setActiveCriteria(criterion)}
-                className={`px-8 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
-                  activeCriteria === criterion
-                    ? "bg-white text-[#0078D4] shadow-lg border-0"
-                    : "bg-white/20 text-white hover:bg-white/30"
-                }`}
-              >
-                {criterion}
-              </button>
-            ))}
-          </div>
+          {/* Controls Layout - 좌우 분할 */}
+          <div className="w-full max-w-[980px] mx-auto flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 mb-16">
 
-          {/* Period Tabs */}
-          <div className="flex space-x-8 mb-16">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`pb-2 text-sm font-medium transition-all duration-200 ${
-                  activeTab === tab 
-                    ? "text-white font-bold border-b-2 border-white"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+            {/* Left Side - Criteria Pills */}
+            <div className="flex space-x-1">
+              {criteria.map((criterion, index) => (
+                <button
+                  key={criterion}
+                  onClick={() => setActiveCriteria(criterion)}
+                  className={`px-8 py-3 rounded-full text-sm font-medium transition-all duration-200 ${activeCriteria === criterion
+                    ? "bg-white text-black font-bold shadow-lg"
+                    : "border border-white text-white/90 bg-transparent hover:bg-white/10"
+                    }`}
+                >
+                  {criterion}
+                </button>
+              ))}
+            </div>
+
+            {/* Right Side - Period Tabs in gray pill */}
+            <div className="bg-white/20 rounded-full px-10 py-2 backdrop-blur-sm">
+              <div className="flex space-x-10 text-sm tracking-wide">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`relative pb-1 transition-all duration-200 ${activeTab === tab
+                      ? "text-white font-bold"
+                      : "text-white/70 hover:text-white"
+                      }`}
+                  >
+                    {activeTab === tab && (
+                      <>
+                        <span className="absolute -left-3 top-0 text-white">✓</span>
+                        <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-white"></span>
+                      </>
+                    )}
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Ranking Cards */}
           <div className="max-w-[1200px] mx-auto px-4 w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <div className="flex justify-center gap-4 mb-8">
               {/* 펀드 카드 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="bg-[#0078D4] text-white p-6 relative min-h-[220px] flex flex-col">
-                  <div className="absolute top-4 right-4 text-6xl font-bold opacity-30">1</div>
+              <div className="w-[310px] bg-white shadow-xl overflow-hidden">
+                <div className="bg-[#1598dc] text-white relative h-[289px] p-[20px] box-border flex flex-col">
+                  {/* 작은 숫자 1 */}
+                  <div className="absolute top-4 right-4 text-3xl font-bold text-gray-800/30">1</div>
+
+                  {/* 카테고리 헤더 */}
+                  <p className="text-base font-semibold leading-4 pb-[15px] mb-4 text-left">
+                    펀드
+                  </p>
+                  {/* 얇은 가로 라인 */}
+                  <div className="w-full h-px bg-white/20 mb-4"></div>
+
                   <div className="flex gap-2 mb-4">
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">낮은위험</span>
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">해외주식</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">낮은위험</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">국내주식</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-auto leading-tight">
-                    신한BNPP 미국배당다우존스 증권상장지수<br/>투자신탁[주식-해외]
+                  <h3 className="text-[21px] font-medium leading-[26px] mb-6 text-left">
+                    신한초단기채증권투자신탁<br />[채권]C-e
                   </h3>
                   <div className="mt-auto">
-                    <p className="text-sm opacity-80 mb-1">판매액</p>
-                    <p className="text-3xl font-bold">1,247<span className="text-sm font-normal ml-1">억 원</span></p>
+                    <p className="text-sm opacity-80 mb-1 text-left">판매액</p>
+                    <p className="text-3xl font-bold text-left">719<span className="text-sm font-normal ml-1">억원</span></p>
                   </div>
                 </div>
-                <div className="bg-gray-50 p-4 flex gap-2">
-                  <button className="flex-1 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 flex items-center justify-center gap-1">
-                    <span>☰</span> 상세
+                {/* 전체 흰색 footer */}
+                <footer className="flex w-full h-14 bg-white divide-x divide-gray-300 text-sm text-gray-700">
+                  <button className="flex-1 flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
+                    <span>⋯</span> <span>상세</span>
                   </button>
-                  <button className="flex-1 py-2 text-sm text-[#0078D4] bg-white border border-[#0078D4] rounded hover:bg-blue-50 flex items-center justify-center gap-1">
-                    <span>🛒</span> 매수
+                  <button className="flex-1 flex items-center justify-center gap-1 hover:bg-blue-50 text-[#1598dc]">
+                    <span>⋯</span> <span>매수</span>
                   </button>
-                </div>
+                </footer>
               </div>
 
               {/* ELS/DLS 카드 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="bg-[#4A5568] text-white p-6 relative min-h-[220px] flex flex-col">
-                  <div className="absolute top-4 right-4 text-6xl font-bold opacity-30">1</div>
+              <div className="w-[310px] bg-white shadow-xl overflow-hidden">
+                <div className="bg-[#587cc5] text-white relative h-[289px] p-[20px] box-border flex flex-col">
+                  {/* 작은 숫자 1 */}
+                  <div className="absolute top-4 right-4 text-3xl font-bold text-gray-800/30">1</div>
+
+                  {/* 카테고리 헤더 */}
+                  <p className="text-base font-semibold leading-4 pb-[15px] mb-4 text-left">
+                    ELS/DLS
+                  </p>
+                  {/* 얇은 가로 라인 */}
+                  <div className="w-full h-px bg-white/20 mb-4"></div>
+
                   <div className="flex gap-2 mb-4">
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">원금보장</span>
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">해외지수</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">원금보장</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">해외지수</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-auto leading-tight">
-                    신한투자증권 제2024-123호 ELS<br/>(KOSPI200, 유로스톡스50 연계)
+                  <h3 className="text-[21px] font-medium leading-[26px] mb-6 text-left">
+                    EURO STOXX 50, 코스피<br />200, S&P 500
                   </h3>
                   <div className="mt-auto">
-                    <p className="text-sm opacity-80 mb-1">판매액</p>
-                    <p className="text-3xl font-bold">2,156<span className="text-sm font-normal ml-1">억 원</span></p>
+                    <p className="text-sm opacity-80 mb-1 text-left">판매액</p>
+                    <p className="text-3xl font-bold text-left">279<span className="text-sm font-normal ml-1">억원</span></p>
                   </div>
                 </div>
-                <div className="bg-gray-50 p-4">
-                  <button className="w-full py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 flex items-center justify-center gap-1">
-                    <span>☰</span> 상품목록
+                {/* 전체 흰색 footer */}
+                <footer className="flex w-full h-14 bg-white text-sm">
+                  <button className="w-full flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
+                    <span>⋯</span> <span>상품목록</span>
                   </button>
-                </div>
+                </footer>
               </div>
 
               {/* 랩 카드 */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="bg-[#9333EA] text-white p-6 relative min-h-[220px] flex flex-col">
-                  <div className="absolute top-4 right-4 text-6xl font-bold opacity-30">1</div>
+              <div className="w-[310px] bg-white shadow-xl overflow-hidden">
+                <div className="bg-[#896cbc] text-white relative h-[289px] p-[20px] box-border flex flex-col">
+                  {/* 작은 숫자 1 */}
+                  <div className="absolute top-4 right-4 text-3xl font-bold text-gray-800/30">1</div>
+
+                  {/* 카테고리 헤더 */}
+                  <p className="text-base font-semibold leading-4 pb-[15px] mb-4 text-left">
+                    랩(Wrap)
+                  </p>
+                  {/* 얇은 가로 라인 */}
+                  <div className="w-full h-px bg-white/20 mb-4"></div>
+
                   <div className="flex gap-2 mb-4">
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">자문운용형</span>
-                    <span className="bg-white/20 px-2 py-1 rounded text-xs">프리미엄</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">대출운용형</span>
+                    <span className="border border-white/40 px-2 py-1 rounded text-xs">자문운용형</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-auto leading-tight">
-                    신한 프리미엄 자문운용형 랩어카운트
+                  <h3 className="text-[21px] font-medium leading-[26px] mb-6 text-left">
+                    프로PB랩 마스터후취형
                   </h3>
                   <div className="mt-auto">
-                    <p className="text-sm opacity-80 mb-1">판매액</p>
-                    <p className="text-3xl font-bold">3,456<span className="text-sm font-normal ml-1">억 원</span></p>
+                    <p className="text-sm opacity-80 mb-1 text-left">판매액</p>
+                    <p className="text-3xl font-bold text-left">61<span className="text-sm font-normal ml-1">억원</span></p>
                   </div>
                 </div>
-                <div className="bg-gray-50 p-4">
-                  <button className="w-full py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 flex items-center justify-center gap-1">
-                    <span>☰</span> 상세
+                {/* 전체 흰색 footer */}
+                <footer className="flex w-full h-14 bg-white text-sm">
+                  <button className="w-full flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
+                    <span>⋯</span> <span>상세</span>
                   </button>
-                </div>
+                </footer>
               </div>
             </div>
 
@@ -151,11 +191,10 @@ export default function Hero() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`pb-2 text-sm font-medium transition-all duration-200 ${
-                    activeCategory === category
-                      ? "text-white font-bold border-b-2 border-[#0078D4]"
-                      : "text-white/70 hover:text-white"
-                  }`}
+                  className={`pb-2 text-sm font-medium transition-all duration-200 ${activeCategory === category
+                    ? "text-white font-bold border-b-2 border-[#0078D4]"
+                    : "text-white/70 hover:text-white"
+                    }`}
                 >
                   {category}
                 </button>
@@ -171,6 +210,16 @@ export default function Hero() {
           section {
             height: 60vh;
             min-height: 500px;
+          }
+          
+          .bg-white\\/20 {
+            overflow-x: auto;
+            white-space: nowrap;
+          }
+          
+          .bg-white\\/20 > div {
+            display: inline-flex;
+            min-width: max-content;
           }
         }
         
