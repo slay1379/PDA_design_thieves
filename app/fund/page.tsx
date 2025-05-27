@@ -15,7 +15,7 @@ export default function ShinhanELSPage() {
     <header className="top-header">
         <div className="container header-flex">
             <div className="logo">
-                <img src="images/shinhan-logo.png" alt="신한투자증권"/>
+                <img src="/logo.png" alt="신한투자증권"/>
             </div>
             <div className="top-menu">
                 <a href="#">로그인</a>
@@ -76,7 +76,8 @@ export default function ShinhanELSPage() {
 
             {/* <!-- 펀드 상세 제목 및 코드 --> */}
             <section className="fund-header">
-                <span className="badge recommend"><i className="fas fa-award"></i> 추천</span>
+              <div className="header-grid">
+                <span className="badge recommend"><img src="/bg_badge-theme.png" alt="추천"/></span>
                 <div className="fund-title-row">
                     
                     <div className="fund-badges">
@@ -94,6 +95,7 @@ export default function ShinhanELSPage() {
                     <a href="#" className="class-more">클래스더보기 +</a>
                     <span className="fund-type">초단기채권</span>
                 </div>
+              </div>
             </section>
 
             {/* <!-- 펀드 정보/수익률 --> */}

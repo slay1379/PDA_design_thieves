@@ -139,6 +139,11 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
 
+    .header-grid{
+        display: grid;
+        
+    }
+
     .fund-badges-row {
         display: flex;
         align-items: center;
@@ -155,7 +160,7 @@
     }
 
     .badge.recommend {
-        background: #1976d2;
+        // background: #1976d2;
         color: #fff;
         border: none;
         font-weight: 700;
