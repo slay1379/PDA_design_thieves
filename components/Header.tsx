@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { User, Search, Menu, X } from "lucide-react"
+import { User, Search, Menu, X, Star, Printer, Share2 } from "lucide-react"
 import Image from "next/image"
 
 export default function Header() {
@@ -81,7 +81,7 @@ export default function Header() {
                   className="absolute top-5 left-5 z-10 object-contain"
                 />
               </button>
-              
+
               {/* Read Glasses 아이콘 */}
               <button className="relative overflow-hidden block w-[65px] h-[65px] bg-[#1598dc] box-border m-0 p-0 border-0 outline-0 cursor-pointer">
                 <span className="block indent-[-9999px]">검색</span>
@@ -93,9 +93,9 @@ export default function Header() {
                   className="absolute top-5 left-5 z-10 object-contain"
                 />
               </button>
-              
+
               {/* List Bar 버튼 */}
-              <button 
+              <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="relative overflow-hidden block w-[65px] h-[65px] bg-[#1598dc] box-border m-0 p-0 border-0 outline-0 cursor-pointer"
               >
@@ -159,10 +159,10 @@ export default function Header() {
               <span className="ml-1 text-gray-400">▼</span>
             </div>
           </nav>
-          <div className="hidden lg:flex items-center space-x-3 text-gray-500 pr-2">
-            <span className="cursor-pointer hover:text-gray-700">⭐</span>
-            <span className="cursor-pointer hover:text-gray-700">🖨️</span>
-            <span className="cursor-pointer hover:text-gray-700">↕️</span>
+          <div className="ml-auto flex items-center space-x-6 pr-4">
+            <Star className="w-4 h-4 cursor-pointer hover:text-yellow-500" />
+            <Printer className="w-4 h-4 cursor-pointer hover:text-gray-800" />
+            <Share2 className="w-4 h-4 cursor-pointer hover:text-gray-800" />
           </div>
         </div>
       </div>
