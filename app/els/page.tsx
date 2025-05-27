@@ -243,7 +243,8 @@ export default function ShinhanELSPage() {
                   <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">상품명</th>
                   <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">기초자산</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
-                    <div>특정정조건</div>
+                    <div>특정조건</div>
+                    <br></br>
                     <div>충족시</div>
                     <div>(세전, %)</div>
                   </th>
