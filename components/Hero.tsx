@@ -1,15 +1,25 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState("1개월")
   const [activeCriteria, setActiveCriteria] = useState("판매금액기준")
   const [activeCategory, setActiveCategory] = useState("펀드")
+  const router = useRouter()
 
   const tabs = ["1주", "1개월", "3개월", "6개월", "1년"]
   const criteria = ["판매금액기준", "매수고객수 기준"]
   const categories = ["전체", "펀드", "ELS/DLS", "랩(Wrap)"]
+
+  const handleFundDetail = () => {
+    router.push('/fund')
+  }
+
+  const handleElsDetail = () => {
+    router.push('/els')
+  }
 
   return (
     <section className="relative h-screen min-h-[600px]">
@@ -102,7 +112,9 @@ export default function Hero() {
                 </div>
                 {/* 전체 흰색 footer */}
                 <footer className="flex w-full h-14 bg-white divide-x divide-gray-300 text-sm text-gray-700">
-                  <button className="flex-1 flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
+                  <button
+                    onClick={handleFundDetail}
+                    className="flex-1 flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
                     <span>⋯</span> <span>상세</span>
                   </button>
                   <button className="flex-1 flex items-center justify-center gap-1 hover:bg-blue-50 text-[#1598dc]">
@@ -138,7 +150,9 @@ export default function Hero() {
                 </div>
                 {/* 전체 흰색 footer */}
                 <footer className="flex w-full h-14 bg-white text-sm">
-                  <button className="w-full flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
+                  <button
+                    onClick={handleElsDetail}
+                    className="w-full flex items-center justify-center gap-1 hover:bg-gray-50 text-gray-700">
                     <span>⋯</span> <span>상품목록</span>
                   </button>
                 </footer>
