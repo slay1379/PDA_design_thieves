@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Search, User, Menu, Home, Star, Printer, Share2, ChevronUp } from "lucide-react"
+import Image from 'next/image';
 
 export default function ShinhanELSPage() {
   const [searchType, setSearchType] = useState("전체")
@@ -24,7 +25,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "매거듭 스텝다운 형 (85-85-85-80-75-50, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다\n조기상환기회",
+      subscriptionPeriod: "매 6개월마다 조기상환기회",
       startDate: "2025.05.23",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -39,7 +40,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (78-78-78-78-75-75-75-75-70-70-70-60,40 KI)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다\n조기상환기회",
+      subscriptionPeriod: "매 6개월마다 조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -54,7 +55,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (95-95-95-92-92-91-91-88-88-88-85, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다\n조기상환기회",
+      subscriptionPeriod: "매 6개월마다 조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -69,7 +70,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (95-95-95-92-92-87-87-85, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다\n조기상환기회",
+      subscriptionPeriod: "매 6개월마다 조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -84,7 +85,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "스텝다운 형 (85-85-85-80-75-65, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다\n조기상환기회",
+      subscriptionPeriod: "매 6개월마다 조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -116,12 +117,15 @@ export default function ShinhanELSPage() {
           {/* Main Navigation */}
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center space-x-8">
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">S</span>
                 </div>
-                <span className="text-blue-600 font-bold text-xl">신한투자증권</span>
-              </div>
+              </div> */}
+              
+              <img src="/logo.png" alt='신한투자증권'/>
+             
+
 
               <nav className="flex space-x-8 text-gray-700 font-medium">
                 <span className="cursor-pointer hover:text-blue-600">나의자산현황</span>
@@ -239,19 +243,21 @@ export default function ShinhanELSPage() {
             <table className="w-full min-w-[1200px]">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">선택</th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">상품명</th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">기초자산</th>
+                  <th className="px-4 py-3 text-center text-sm font-medium text-gray-700 whitespace-nowrap">선택</th>
+                  <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">상품명</th>
+                  <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">기초자산</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
-                    <div>특정정조건</div>
+                    <div>특정조건</div>
                     <div>충족시</div>
                     <div>(세전, %)</div>
                   </th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
-                    <div>조건미충족시</div>
+                    {/* <div>조건미충족시</div> */}
+                    <div style={{ whiteSpace: 'nowrap' }}>조건미충족시</div>
                     <div>(원대손실형)</div>
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">상품유형</th>
+                  {/* <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">상품유형</th> */}
+                  <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">상품유형</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">만기</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">청약기간</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">숙려기간</th>
@@ -268,7 +274,7 @@ export default function ShinhanELSPage() {
                         className="rounded border-gray-300"
                       />
                     </td>
-                    <td className="px-4 py-4">
+                    {/* <td className="px-4 py-4">
                       <div className="flex flex-col">
                         <div className="flex space-x-1 mb-2">
                           {product.tags.map((tag, tagIndex) => (
@@ -286,7 +292,27 @@ export default function ShinhanELSPage() {
                         </div>
                         <span className="font-medium text-blue-600 hover:underline cursor-pointer">{product.name}</span>
                       </div>
-                    </td>
+                    </td> */}
+                    <td className="px-4 py-4">
+                  <div className="flex flex-col">
+                    <div className="flex space-x-1 mb-2">
+                      {product.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className={`px-2 py-1 rounded font-medium whitespace-nowrap text-[10px] ${
+                            tag === "매출증가형"
+                              ? "bg-red-100 text-red-600 border border-red-200"
+                              : "bg-blue-100 text-blue-600 border border-blue-200"
+                          }`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="font-medium text-blue-600 hover:underline cursor-pointer">{product.name}</span>
+                  </div>
+                </td>
+
                     <td className="px-4 py-4">
                       <div className="text-sm text-gray-700 table-content-multiline">{product.underlyingAssets}</div>
                     </td>
