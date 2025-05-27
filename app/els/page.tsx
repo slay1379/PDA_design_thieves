@@ -18,7 +18,7 @@ export default function ShinhanELSPage() {
   const elsProducts = [
     {
       id: "USD26508",
-      name: "공모ELS USD26508호",
+      name: "공모ELS USD2650호",
       tags: ["매출증가형", "원금보호형"],
       underlyingAssets: "EURO STOXX 50, NIKKEI225, S&P 500",
       couponRate: "7.70%",
@@ -33,7 +33,7 @@ export default function ShinhanELSPage() {
     },
     {
       id: "USD26506",
-      name: "공모ELS USD26506호",
+      name: "공모ELS USD2656호",
       tags: ["매출증가형", "원금보호형"],
       underlyingAssets: "AMAZON COM INC, Meta Platforms Inc, NVIDIA Corp",
       couponRate: "11.00%",
@@ -48,7 +48,7 @@ export default function ShinhanELSPage() {
     },
     {
       id: "USD26503",
-      name: "공모ELS USD26503호",
+      name: "공모ELS USD2603호",
       tags: ["매출증가형", "원금보호형"],
       underlyingAssets: "EURO STOXX 50, 코스피 200, S&P 500",
       couponRate: "7.20%",
@@ -63,7 +63,7 @@ export default function ShinhanELSPage() {
     },
     {
       id: "USD26501",
-      name: "공모ELS USD26501호",
+      name: "공모ELS USD2601호",
       tags: ["매출증가형", "원금보호형"],
       underlyingAssets: "EURO STOXX 50, 코스피 200, S&P 500",
       couponRate: "7.02%",
@@ -78,7 +78,7 @@ export default function ShinhanELSPage() {
     },
     {
       id: "USD26498",
-      name: "공모ELS USD26498호",
+      name: "공모ELS USD2648호",
       tags: ["매출증가형", "원금보호형"],
       underlyingAssets: "EURO STOXX 50, 코스피 200, S&P 500",
       couponRate: "9.10%",
@@ -265,7 +265,8 @@ export default function ShinhanELSPage() {
               </thead>
               <tbody>
                 {elsProducts.map((product, index) => (
-                  <tr key={product.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  // <tr key={product.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={product.id} className={`${index % 2 === 0 ? "bg-white" : "bg-gray-50"} text-sm`}>
                     <td className="px-4 py-4">
                       <input
                         type="checkbox"
@@ -274,6 +275,7 @@ export default function ShinhanELSPage() {
                         className="rounded border-gray-300"
                       />
                     </td>
+                    
                     {/* <td className="px-4 py-4">
                       <div className="flex flex-col">
                         <div className="flex space-x-1 mb-2">
