@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./styles.scss";
 
 export default function ShinhanFundPage() {
@@ -106,21 +106,7 @@ export default function ShinhanFundPage() {
                 </div>
                 {/* 차트 */}
                 <div className="yield-chart-mock w-full flex justify-center items-end" style={{height: '180px'}}>
-                  {/* 실제 차트 대신 스타일로 대체 */}
-                  <svg width="420" height="160">
-                    <rect x="0" y="0" width="420" height="160" fill="none" stroke="#e0e0e0" strokeWidth="1" rx="8"/>
-                    <polyline
-                      fill="none"
-                      stroke="#2b7cff"
-                      strokeWidth="3"
-                      points="0,150 30,140 60,130 90,120 120,110 150,100 180,90 210,80 240,70 270,60 300,50 330,40 360,35 390,30 420,25"
-                    />
-                    <g fontSize="14" fill="#888">
-                      <text x="40" y="175">2025.04.28</text>
-                      <text x="180" y="175">2025.05.14</text>
-                      <text x="340" y="175">2025.05.27</text>
-                    </g>
-                  </svg>
+                  <AnimatedChart />
                 </div>
               </div>
               {/* 오른쪽: 정보 표 */}
@@ -171,5 +157,37 @@ export default function ShinhanFundPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+// AnimatedChart 컴포넌트 추가
+function AnimatedChart() {
+  const chartPoints = [
+    "0,150", "30,120", "60,135", "90,105", "120,120", "150,90", "180,105", "210,80", "240,90", "270,65", "300,70", "330,50", "360,55", "390,35", "420,40"
+  ];
+  const [visiblePoints, setVisiblePoints] = useState(1);
+
+  useEffect(() => {
+    if (visiblePoints < chartPoints.length) {
+      const timer = setTimeout(() => setVisiblePoints(visiblePoints + 1), 40);
+      return () => clearTimeout(timer);
+    }
+  }, [visiblePoints]);
+
+  return (
+    <svg width="420" height="160">
+      <rect x="0" y="0" width="420" height="160" fill="none" stroke="#e0e0e0" strokeWidth="1" rx="8"/>
+      <polyline
+        fill="none"
+        stroke="#2b7cff"
+        strokeWidth="3"
+        points={chartPoints.slice(0, visiblePoints).join(" ")}
+      />
+      <g fontSize="14" fill="#888">
+        <text x="40" y="175">2025.04.28</text>
+        <text x="180" y="175">2025.05.14</text>
+        <text x="340" y="175">2025.05.27</text>
+      </g>
+    </svg>
   );
 }
