@@ -320,6 +320,41 @@ export default function ShinhanELSPage() {
           </div>
         </div>
 
+        {/* Notice Section */}
+        <div className="mt-12 mb-8">
+          <div className="notice-box">
+            <ul className="notice-list">
+              <li>이 안내문은 청약의 권유를 목적으로 하지 않으며, 청약의 권유는 (예비 · 간이)투자설명서에 따릅니다.</li>
+              <li>
+                당사는 이 금융투자상품에 관하여 충분히 설명할 의무가 있으며, 투자자는 투자에 앞서 그러한 설명을 충분히
+                들으시기 바랍니다.
+              </li>
+              <li className="bold">
+                이 금융투자상품은 자산가치 변동, 환율변동, 신용등급 하락 등에 따라 투자원금의 손실(0~100%)이 발생할 수
+                있으며, 그 손실은 투자자에게 귀속됩니다.
+              </li>
+              <li className="bold">
+                투자자는 금융투자상품에 대하여 충분한 설명을 받을 권리가 있으며, 투자 전 상품설명서 및 약관을 반드시
+                읽어보시기 바랍니다.
+              </li>
+              <li className="bold">이 금융상품은 예금자보호법에 따라 보호되지 않습니다.</li>
+              <li>ELS/DLS는 파생결합증권으로서 기초자산의 성과에 연동하여 수익구조가 결정되는 상품입니다.</li>
+              <li>중도상환 시 시장상황에 따라 투자원금보다 낮은 금액으로 상환될 수 있습니다.</li>
+              <li>
+                발행회사의 신용위험에 노출되어 있어 발행회사의 파산, 부도 등의 경우 투자원금 전액 손실이 가능합니다.
+              </li>
+              <li>해외 기초자산에 투자하는 상품의 경우 환율변동 위험이 있습니다.</li>
+              <li>
+                청약 전 투자설명서, 간이투자설명서를 반드시 읽어보시고 상품의 구조와 위험요인을 충분히 이해하신 후
+                투자결정을 하시기 바랍니다.
+              </li>
+              <li>과거의 운용실적이 미래의 수익률을 보장하지 않습니다.</li>
+              <li>투자자는 해당 금융투자상품에 대해 금융상품판매업자로부터 충분한 설명을 들을 권리가 있습니다.</li>
+            </ul>
+            <p className="authInfo">※신한투자증권 준법감시인 심사필 제24-1271호(2024년 07월01일 - 2025년 07월 01일)</p>
+          </div>
+        </div>
+
         {/* Back to Top Button */}
         <div className="fixed bottom-8 right-8">
           <button className="bg-gray-600 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors">
