@@ -94,54 +94,82 @@ export default function ShinhanFundPage() {
           <section className="fund-info-section">
             <div className="fund-info-grid">
               {/* 왼쪽: 수익률/차트 */}
-              <div className="fund-yield-block">
-                <div className="yield-tabs">
-                  <button className="active">수익률 (1개월)</button>
-                  <button>수익률 (3개월)</button>
+              <div className="fund-yield-block w-full max-w-[420px]">
+                {/* 수익률 탭 */}
+                <div className="yield-tabs flex border-b border-gray-200 mb-4">
+                  <button className="active text-[#1a2952] font-bold text-base pb-2 border-b-4 border-[#1a2952] mr-8">수익률(1개월)</button>
+                  <button className="text-gray-400 font-bold text-base pb-2 border-b-4 border-transparent">수익률(3개월)</button>
                 </div>
-                <div className="yield-value">
-                  <span className="percent">0.24</span><span className="unit">%</span>
+                {/* 수익률 값 */}
+                <div className="yield-value text-[3rem] font-bold text-[#e53935] flex items-baseline mb-2">
+                  0.25<span className="unit text-[2rem] font-bold ml-1">%</span>
                 </div>
-                <div className="yield-chart-mock">
+                {/* 차트 */}
+                <div className="yield-chart-mock w-full flex justify-center items-end" style={{height: '180px'}}>
                   {/* 실제 차트 대신 스타일로 대체 */}
-                  <svg width="120" height="80">
+                  <svg width="420" height="160">
+                    <rect x="0" y="0" width="420" height="160" fill="none" stroke="#e0e0e0" strokeWidth="1" rx="8"/>
                     <polyline
                       fill="none"
                       stroke="#2b7cff"
                       strokeWidth="3"
-                      points="0,80 10,75 20,70 30,60 40,55 50,50 60,40 70,35 80,30 90,20 100,10 110,5 120,0"
+                      points="0,150 30,140 60,130 90,120 120,110 150,100 180,90 210,80 240,70 270,60 300,50 330,40 360,35 390,30 420,25"
                     />
+                    <g fontSize="14" fill="#888">
+                      <text x="40" y="175">2025.04.28</text>
+                      <text x="180" y="175">2025.05.14</text>
+                      <text x="340" y="175">2025.05.27</text>
+                    </g>
                   </svg>
                 </div>
               </div>
               {/* 오른쪽: 정보 표 */}
-              <div className="fund-meta-block">
-                <table className="fund-meta-table">
-                  <tr>
-                    <th>기준가 <span className="meta-date">(2025.05.23기준)</span></th>
-                    <th>제로인등급/유형</th>
-                    <th>펀드총규모</th>
-                    <th>클래스규모</th>
-                  </tr>
-                  <tr>
-                    <td className="meta-strong">1,028.64 <span className="meta-down">▼7.21</span></td>
-                    <td><span className="stars">★★★★★</span><span className="meta-type">초단기채권</span></td>
-                    <td className="meta-strong">21,525 <span className="meta-unit">억원</span></td>
-                    <td className="meta-strong">5,108 <span className="meta-unit">억원</span></td>
-                  </tr>
-                  <tr>
-                    <th>설정일</th>
-                    <th>보수</th>
-                    <th>판매수수료</th>
-                    <th>운용사</th>
-                  </tr>
-                  <tr>
-                    <td>2024.05.24</td>
-                    <td>0.230%</td>
-                    <td>없음</td>
-                    <td>신한자산운용</td>
-                  </tr>
-                </table>
+              <div className="fund-meta-block space-y-4 bg-white rounded-lg shadow p-4">
+                {/* 1행 */}
+                <div className="grid grid-cols-2 gap-x-8 py-2 border-b">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs text-gray-500">기준가 <span className="meta-date">(2025.05.23기준)</span></span>
+                    <div className="flex justify-between">
+                        <span className="text-2xl font-bold text-[#1a237e]">1,028.64</span>
+                        <span className="text-base font-bold text-blue-500 align-top">▼ 7.21</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs text-gray-500">제로인등급/유형</span>
+                    <div className="flex justify-between">
+                        <span className="stars text-lg text-gray-400">★★★★★</span>
+                        <span className="text-base text-blue-800">초단기채권</span>
+                    </div>
+                  </div>
+                </div>
+                {/* 2행 */}
+                <div className="grid grid-cols-2 gap-x-8 py-[26px] px-0 border-b">
+                  <div className="flex justify-between">
+                    <span className="text-xs text-gray-500">펀드총규모</span>
+                    <span className="text-3xl font-bold">21,525 <span className="text-base font-normal">억원</span></span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-xs text-gray-500">클래스규모</span>
+                    <span className="text-3xl font-bold">5,108 <span className="text-base font-normal">억원</span></span>
+                  </div>
+                </div>
+                {/* 3행 */}
+                <div className="grid grid-cols-2 gap-x-8 py-2">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs text-gray-500">설정일</span>
+                    <span>2024.05.24</span>
+                    <span className="text-xs text-gray-500 mt-2">보수</span>
+                    <span>0.230%</span>
+                    <span className="text-xs text-gray-500 mt-2">환매수수료</span>
+                    <span>없음</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs text-gray-500">운용사</span>
+                    <span>신한자산운용</span>
+                    <span className="text-xs text-gray-500 mt-2">선취수수료</span>
+                    <span>없음</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

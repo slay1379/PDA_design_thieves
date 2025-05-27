@@ -1,12 +1,15 @@
 /* 전역 스타일 */
 
 .fund-page{
+
+
     .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
         position: relative;
         z-index: 1;
+        box-sizing: border-box;
     }
 
     /* 상단 곡선 배경 */
@@ -226,12 +229,14 @@
         background: #fff;
         border-radius: 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        padding: 32px 36px 32px 36px;
+        padding: 46px 0 25px;
     }
 
     .fund-info-grid {
         display: flex;
         gap: 36px;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .fund-yield-block {
@@ -240,6 +245,8 @@
         flex-direction: column;
         align-items: flex-start;
         min-width: 220px;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .yield-tabs {
@@ -282,23 +289,26 @@
     }
 
     .yield-chart-mock {
-        width: 120px;
-        height: 80px;
+        width: 286px;
+        height: 205px;
         background: #f8fafd;
         border-radius: 8px;
         border: 1px solid #e0e0e0;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         margin-top: 8px;
         margin-bottom: 8px;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .fund-meta-block {
         flex: 2;
-        display: flex;
         align-items: flex-start;
         justify-content: flex-end;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .fund-meta-table {
