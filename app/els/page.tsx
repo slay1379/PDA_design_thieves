@@ -24,7 +24,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "매거듭 스텝다운 형 (85-85-85-80-75-50, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다 조기상환기회",
+      subscriptionPeriod: "매 6개월마다\n조기상환기회",
       startDate: "2025.05.23",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -39,7 +39,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (78-78-78-78-75-75-75-75-70-70-70-60,40 KI)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다 조기상환기회",
+      subscriptionPeriod: "매 6개월마다\n조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -54,7 +54,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (95-95-95-92-92-91-91-88-88-88-85, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다 조기상환기회",
+      subscriptionPeriod: "매 6개월마다\n조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -69,7 +69,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "수익배리어 스텝다운 형 (95-95-95-92-92-87-87-85, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다 조기상환기회",
+      subscriptionPeriod: "매 6개월마다\n조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -84,7 +84,7 @@ export default function ShinhanELSPage() {
       knockInBarrier: "-100.00%",
       observationPeriod: "스텝다운 형 (85-85-85-80-75-65, 노낙인)",
       duration: "3.0년",
-      subscriptionPeriod: "매 6개월마다 조기상환기회",
+      subscriptionPeriod: "매 6개월마다\n조기상환기회",
       startDate: "2025.05.22",
       endDate: "2025.05.27",
       maturityDate: "2025.05.30",
@@ -243,7 +243,7 @@ export default function ShinhanELSPage() {
                   <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">상품명</th>
                   <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">기초자산</th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
-                    <div>녹킹조건</div>
+                    <div>특정정조건</div>
                     <div>충족시</div>
                     <div>(세전, %)</div>
                   </th>
