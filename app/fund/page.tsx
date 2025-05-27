@@ -155,19 +155,14 @@ export default function ShinhanFundPage() {
                 </div>
                 {/* 3행 */}
                 <div className="grid grid-cols-2 gap-x-8 py-2">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xs text-gray-500">설정일</span>
-                    <span>2024.05.24</span>
-                    <span className="text-xs text-gray-500 mt-2">보수</span>
-                    <span>0.230%</span>
-                    <span className="text-xs text-gray-500 mt-2">환매수수료</span>
-                    <span>없음</span>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex justify-between"><span className="text-xs text-gray-500">설정일</span><span>2024.05.24</span></div>
+                    <div className="flex justify-between"><span className="text-xs text-gray-500">보수</span><span>0.230%</span></div>
+                    <div className="flex justify-between"><span className="text-xs text-gray-500">환매수수료</span><span>없음</span></div>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xs text-gray-500">운용사</span>
-                    <span>신한자산운용</span>
-                    <span className="text-xs text-gray-500 mt-2">선취수수료</span>
-                    <span>없음</span>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex justify-between"><span className="text-xs text-gray-500">운용사</span><span>신한자산운용</span></div>
+                    <div className="flex justify-between"><span className="text-xs text-gray-500">선취수수료</span><span>없음</span></div>
                   </div>
                 </div>
               </div>

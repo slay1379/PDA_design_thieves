@@ -3,13 +3,18 @@
 .fund-page{
 
 
-    .container {
+    .container,
+    .container.sub-nav {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
         position: relative;
         z-index: 1;
         box-sizing: border-box;
+    }
+
+    .container.sub-nav {
+        background: none;
     }
 
     /* 상단 곡선 배경 */
@@ -85,8 +90,9 @@
     .nav-menu {
         display: flex;
         list-style: none;
+        width: 100%;
         gap: 36px;
-        padding: 0 0 0 35px;
+        padding: 0 35px;
         background: #fff;
     }
 
@@ -100,16 +106,18 @@
     }
 
     .sub-nav {
-        background: #f8fafd;
+        background: none;
         border-bottom: 1.5px solid #e0e0e0;
         padding: 0;
     }
 
     .sub-nav ul {
         display: flex;
-        gap: 24px;
+        width: 100%;
+        gap: 36px;
         list-style: none;
-        padding: 0 0 0 5px;
+        padding: 0 35px;
+        background: #f8fafd;
     }
 
     .sub-nav a {
