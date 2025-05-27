@@ -24,12 +24,12 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col justify-center">
         {/* Main Content - 상단 여백 확보, 투명도 조정 */}
-        <div className="flex flex-col pt-40 text-center text-white/95 pb-16">
-          <h1 className="relative text-[36px] font-semibold leading-[36px] mb-[17px] text-center text-white z-10">인기판매랭킹</h1>
-          <p className="text-lg lg:text-xl mb-14">신한투자증권 베스트 상품을 확인해보세요!</p>
+        <div className="flex flex-col pt-[256px] text-center text-white/95">
+          <h1 className="relative text-[36px] font-semibold leading-[36px] mb-[20px] text-center text-white z-10">인기판매랭킹</h1>
+          <p className="text-lg lg:text-xl mb-12">신한투자증권 베스트 상품을 확인해보세요!</p>
 
           {/* Controls Layout - 좌우 분할 */}
-          <div className="w-full max-w-[980px] mx-auto flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 mb-16">
+          <div className="w-full max-w-[980px] mx-auto flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 mb-6">
 
             {/* Left Side - Criteria Pills */}
             <div className="flex space-x-1">
@@ -74,7 +74,7 @@ export default function Hero() {
 
           {/* Ranking Cards */}
           <div className="max-w-[1200px] mx-auto px-4 w-full">
-            <div className="flex justify-center gap-4 mb-8">
+            <div className="flex justify-center gap-6 mb-8">
               {/* 펀드 카드 */}
               <div className="w-[310px] bg-white shadow-xl overflow-hidden">
                 <div className="bg-[#1598dc] text-white relative h-[289px] p-[20px] box-border flex flex-col">
