@@ -1,0 +1,438 @@
+/* 전역 스타일 */
+
+.fund-page{
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 상단 곡선 배경 */
+    .top-bg-pattern {
+        width: 100vw;
+        height: 120px;
+        // background: url('images/top-bg-pattern.png') no-repeat center top/cover, #f5f5f5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    /* 헤더 상단 바 */
+    .top-header {
+        background: transparent;
+        border-bottom: none;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .header-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .top-menu {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .top-menu a {
+        color: #666;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    .top-menu span {
+        color: #bbb;
+        font-size: 13px;
+    }
+
+    .header-icons {
+        display: flex;
+        gap: 12px;
+        font-size: 20px;
+    }
+
+    .header-icons a {
+        color: #004C99;
+    }
+
+    /* 상단 네비게이션 바 */
+    .main-nav {
+        background: #fff;
+        border-bottom: 1.5px solid #e0e0e0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 36px;
+        padding: 0 0 0 5px;
+    }
+
+    .nav-menu a {
+        color: #222;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 18px 0 14px 0;
+        display: inline-block;
+    }
+
+    .sub-nav {
+        background: #f8fafd;
+        border-bottom: 1.5px solid #e0e0e0;
+        padding: 0;
+    }
+
+    .sub-nav ul {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        padding: 0 0 0 5px;
+    }
+
+    .sub-nav a {
+        color: #666;
+        font-size: 15px;
+        text-decoration: none;
+        padding: 10px 0;
+        display: inline-block;
+    }
+
+    /* 중앙정렬 타이틀 */
+    .page-title {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 700;
+        margin: 48px 0 10px 0;
+        letter-spacing: -1px;
+    }
+
+    .divider {
+        width: 100%;
+        height: 4px;
+        background: #1a2952;
+        margin: 0 0 32px 0;
+    }
+
+    /* 펀드 상세 제목 및 코드 */
+    .fund-header {
+        background: #fff;
+        border-radius: 0;
+        padding: 32px 36px 18px 36px;
+        margin-bottom: 18px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .fund-badges-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fund-title-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .badge.recommend {
+        background: #1976d2;
+        color: #fff;
+        border: none;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 0 18px 0 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        height: 32px;
+    }
+
+    .badge.recommend i {
+        background: #fff;
+        color: #1976d2;
+        border-radius: 50%;
+        padding: 4px;
+        font-size: 16px;
+        margin-right: 7px;
+    }
+
+    .fund-name {
+        color: #222;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .fund-code {
+        color: #888;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .class-more {
+        color: #1976d2;
+        font-size: 1rem;
+        margin-left: 8px;
+        text-decoration: underline;
+    }
+
+    .fund-type {
+        color: #1976d2;
+        font-size: 1rem;
+        margin-left: 8px;
+        font-weight: 500;
+    }
+
+    /* 펀드 수익률 정보 */
+    .fund-info-section {
+        background: #fff;
+        border-radius: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        padding: 32px 36px 32px 36px;
+    }
+
+    .fund-info-grid {
+        display: flex;
+        gap: 36px;
+    }
+
+    .fund-yield-block {
+        flex: 1.1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .yield-tabs {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 12px;
+    }
+
+    .yield-tabs button {
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        color: #222;
+        font-weight: 500;
+        padding: 0 0 6px 0;
+        border-bottom: 2.5px solid transparent;
+        cursor: pointer;
+        transition: border 0.2s;
+    }
+
+    .yield-tabs button.active {
+        color: #1976d2;
+        border-bottom: 2.5px solid #1976d2;
+    }
+
+    .yield-value {
+        font-size: 2.7rem;
+        font-weight: 700;
+        color: #e53935;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: flex-end;
+        gap: 2px;
+    }
+
+    .yield-value .unit {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-left: 2px;
+    }
+
+    #fundChart {
+        width: 100%;
+        max-width: 320px;
+        height: 180px !important;
+        margin-top: 8px;
+    }
+
+    .fund-meta-block {
+        flex: 2;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .fund-meta-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.05rem;
+        background: #fff;
+    }
+
+    .fund-meta-table th, .fund-meta-table td {
+        padding: 10px 18px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        font-weight: 500;
+    }
+
+    .fund-meta-table th {
+        color: #888;
+        font-size: 1rem;
+        background: #f8fafd;
+        font-weight: 600;
+    }
+
+    .fund-meta-table .meta-strong {
+        color: #1a2952;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    .fund-meta-table .meta-down {
+        color: #e53935;
+        font-size: 1.1rem;
+        margin-left: 4px;
+    }
+
+    .fund-meta-table .meta-unit {
+        font-size: 1rem;
+        color: #888;
+        margin-left: 2px;
+    }
+
+    .fund-meta-table .meta-date {
+        font-size: 0.95rem;
+        color: #aaa;
+        margin-left: 2px;
+    }
+
+    .fund-meta-table .stars {
+        color: #ccc;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    .fund-meta-table .meta-type {
+        color: #1976d2;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    /* 오른쪽 고정 사이드 메뉴 */
+    .side-menu {
+        position: fixed;
+        right: 32px;
+        top: 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 10;
+    }
+
+    .side-circle {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 12px rgba(0,76,153,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #1976d2;
+        font-size: 1.25rem;
+        font-weight: 600;
+        border: 2px solid #e3eaf5;
+        transition: box-shadow 0.2s;
+        cursor: pointer;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .side-circle i {
+        font-size: 2rem;
+        margin-bottom: 2px;
+    }
+
+    .top-btn {
+        background: #fff;
+        color: #1976d2;
+        border: 2px solid #e3eaf5;
+        box-shadow: 0 2px 12px rgba(0,76,153,0.10);
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top-btn i {
+        font-size: 2rem;
+    }
+
+    /* 반응형 스타일 */
+    @media (max-width: 1024px) {
+        .container {
+            max-width: 98vw;
+        }
+        .fund-info-grid {
+            flex-direction: column;
+            gap: 32px;
+        }
+        .fund-meta-block {
+            justify-content: flex-start;
+        }
+        .side-menu {
+            right: 10px;
+            top: 180px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-flex, .main-nav .container, .sub-nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .nav-menu, .sub-nav ul {
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .fund-header, .fund-info-section {
+            padding: 18px 8px;
+        }
+        .side-menu {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .top-menu, .header-icons {
+            display: none;
+        }
+        .fund-title-main {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .fund-meta-table th, .fund-meta-table td {
+            padding: 7px 6px;
+            font-size: 0.95rem;
+        }
+    } 
+}
