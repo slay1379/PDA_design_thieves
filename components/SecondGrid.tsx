@@ -8,7 +8,7 @@ export default function SecondGrid() {
 
   return (
     <section className="bg-white py-16">
-      <div className="max-w-[1320px] mx-auto px-6">
+      <div className="overflow-hidden w-[980px] mx-auto">
         {/* Section Title */}
         <div className="flex items-center mb-8">
           <div className="w-1 h-6 bg-[#0078D4] mr-3"></div>
@@ -18,16 +18,18 @@ export default function SecondGrid() {
         {/* Card Grids */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* 펀드 */}
-          <div>
+          <div className="border border-gray-200 bg-white shadow-sm overflow-hidden">
+            {/* 카테고리 헤더 */}
+            <h3 className="w-full h-[46px] pl-[30px] text-[21px] font-semibold leading-[46px] text-[#1598dc] border-b-4 border-[#1598dc] bg-white">펀드</h3>
+            
+            {/* 카드들 */}
             <div className="space-y-0">
-              {/* 카테고리 헤더를 첫 번째 카드와 붙임 */}
-              <h3 className="text-lg font-semibold text-gray-900 pb-2 border-b-2 border-[#0078D4] bg-white px-4 py-2 rounded-t-lg">펀드</h3>
               {rankingData.funds.slice(0, showMore ? 5 : 3).map((item, index) => (
                 <div 
                   key={index} 
-                  className={`relative w-[308px] h-[285px] pt-[70px] px-[40px] pb-0 border border-gray-200 border-t-4 border-t-[#1598dc] box-border bg-white shadow-sm ${
-                    index === 0 ? 'rounded-t-none border-t-0' : ''
-                  } ${index === rankingData.funds.slice(0, showMore ? 5 : 3).length - 1 ? 'rounded-b-lg' : 'border-b-0'}`}
+                  className={`relative w-full h-[285px] pt-[70px] px-[40px] pb-0 box-border bg-white ${
+                    index < rankingData.funds.slice(0, showMore ? 5 : 3).length - 1 ? 'border-b border-gray-200' : ''
+                  }`}
                   style={{ listStyle: 'none' }}
                 >
                   {/* 랭킹 번호 */}
@@ -63,30 +65,54 @@ export default function SecondGrid() {
                   </div>
 
                   {/* 버튼들 - 하단 고정 */}
-                  <div className="absolute bottom-0 left-0 right-0 flex border-t border-gray-200">
-                    <button className="flex-1 py-3 text-sm text-gray-700 bg-white hover:bg-gray-50 border-r border-gray-200">
+                  <div className="absolute bottom-6 left-10 right-10 flex gap-1">
+                    <button 
+                      className="text-center text-black bg-white border border-gray-400 inline-block relative overflow-visible m-0 whitespace-nowrap align-middle box-content"
+                      style={{
+                        width: '80px',
+                        height: '26px',
+                        lineHeight: '26px',
+                        padding: '1px 8px 0 8px',
+                        fontSize: '14px',
+                        borderRadius: '2px',
+                        fontFamily: 'nanumB, 돋움, Dotum, 굴림, Gulim'
+                      }}
+                    >
                       상세
                     </button>
-                    <button className="flex-1 py-3 text-sm text-white bg-[#0078D4] hover:bg-[#0056b3]">
+                    <button 
+                      className="text-center text-white bg-[#0078D4] border border-[#0078D4] inline-block relative overflow-visible m-0 whitespace-nowrap align-middle box-content hover:bg-[#0056b3]"
+                      style={{
+                        width: '80px',
+                        height: '26px',
+                        lineHeight: '26px',
+                        padding: '1px 8px 0 8px',
+                        fontSize: '14px',
+                        borderRadius: '2px',
+                        fontFamily: 'nanumB, 돋움, Dotum, 굴림, Gulim'
+                      }}
+                    >
                       매수
                     </button>
                   </div>
                 </div>
-                              ))}
+              ))}
             </div>
           </div>
 
           {/* ELS·DLS */}
-          <div>
+          <div className="border border-gray-200 bg-white shadow-sm overflow-hidden">
+            {/* 카테고리 헤더 */}
+            <h3 className="w-full h-[46px] pl-[30px] text-[21px] font-semibold leading-[46px] text-[#587cc5] border-b-4 border-[#587cc5] bg-white">ELS·DLS</h3>
+            
+            {/* 카드들 */}
             <div className="space-y-0">
-              {/* 카테고리 헤더를 첫 번째 카드와 붙임 */}
-              <h3 className="text-lg font-semibold text-gray-900 pb-2 border-b-2 border-[#1B365D] bg-white px-4 py-2 rounded-t-lg">ELS·DLS</h3>
               {rankingData.els.slice(0, showMore ? 5 : 3).map((item, index) => (
                 <div 
                   key={index} 
-                  className={`relative w-[308px] h-[285px] pt-[70px] px-[40px] pb-0 border border-gray-200 border-t-4 border-t-[#1B365D] box-border bg-white shadow-sm ${
-                    index === 0 ? 'rounded-t-none border-t-0' : ''
-                  } ${index === rankingData.els.slice(0, showMore ? 5 : 3).length - 1 ? 'rounded-b-lg' : 'border-b-0'}`}
+                  className={`relative w-full h-[285px] pt-[70px] px-[40px] pb-0 box-border bg-white ${
+                    index < rankingData.els.slice(0, showMore ? 5 : 3).length - 1 ? 'border-b border-gray-200' : ''
+                  }`}
                   style={{ listStyle: 'none' }}
                 >
                   {/* 랭킹 번호 */}
@@ -122,8 +148,19 @@ export default function SecondGrid() {
                   </div>
 
                   {/* 버튼들 - 하단 고정 */}
-                  <div className="absolute bottom-0 left-0 right-0 border-t border-gray-200">
-                    <button className="w-full py-3 text-sm text-gray-700 bg-white hover:bg-gray-50">
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                    <button 
+                      className="text-center text-black bg-white border border-gray-400 inline-block relative overflow-visible m-0 whitespace-nowrap align-middle box-content"
+                      style={{
+                        width: '120px',
+                        height: '26px',
+                        lineHeight: '26px',
+                        padding: '1px 8px 0 8px',
+                        fontSize: '14px',
+                        borderRadius: '2px',
+                        fontFamily: 'nanumB, 돋움, Dotum, 굴림, Gulim'
+                      }}
+                    >
                       상품목록
                     </button>
                   </div>
@@ -133,16 +170,18 @@ export default function SecondGrid() {
           </div>
 
           {/* 랩 Wrap */}
-          <div>
+          <div className="border border-gray-200 bg-white shadow-sm overflow-hidden">
+            {/* 카테고리 헤더 */}
+            <h3 className="w-full h-[46px] pl-[30px] text-[21px] font-semibold leading-[46px] text-[#896cbc] border-b-4 border-[#896cbc] bg-white">랩 Wrap</h3>
+            
+            {/* 카드들 */}
             <div className="space-y-0">
-              {/* 카테고리 헤더를 첫 번째 카드와 붙임 */}
-              <h3 className="text-lg font-semibold text-gray-900 pb-2 border-b-2 border-[#7A6BD0] bg-white px-4 py-2 rounded-t-lg">랩 Wrap</h3>
               {rankingData.wrap.slice(0, showMore ? 5 : 3).map((item, index) => (
                 <div 
                   key={index} 
-                  className={`relative w-[308px] h-[285px] pt-[70px] px-[40px] pb-0 border border-gray-200 border-t-4 border-t-[#7A6BD0] box-border bg-white shadow-sm ${
-                    index === 0 ? 'rounded-t-none border-t-0' : ''
-                  } ${index === rankingData.wrap.slice(0, showMore ? 5 : 3).length - 1 ? 'rounded-b-lg' : 'border-b-0'}`}
+                  className={`relative w-full h-[285px] pt-[70px] px-[40px] pb-0 box-border bg-white ${
+                    index < rankingData.wrap.slice(0, showMore ? 5 : 3).length - 1 ? 'border-b border-gray-200' : ''
+                  }`}
                   style={{ listStyle: 'none' }}
                 >
                   {/* 랭킹 번호 */}
@@ -178,8 +217,19 @@ export default function SecondGrid() {
                   </div>
 
                   {/* 버튼들 - 하단 고정 */}
-                  <div className="absolute bottom-0 left-0 right-0 border-t border-gray-200">
-                    <button className="w-full py-3 text-sm text-gray-700 bg-white hover:bg-gray-50">
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                    <button 
+                      className="text-center text-black bg-white border border-gray-400 inline-block relative overflow-visible m-0 whitespace-nowrap align-middle box-content"
+                      style={{
+                        width: '120px',
+                        height: '26px',
+                        lineHeight: '26px',
+                        padding: '1px 8px 0 8px',
+                        fontSize: '14px',
+                        borderRadius: '2px',
+                        fontFamily: 'nanumB, 돋움, Dotum, 굴림, Gulim'
+                      }}
+                    >
                       상세
                     </button>
                   </div>
